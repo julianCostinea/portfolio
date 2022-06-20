@@ -1,0 +1,71 @@
+.NavigationItem {
+  margin: 10px 0;
+  display: block;
+  width: 100%;
+  padding-bottom: 5px;
+  font-size: 1.1rem;
+  padding-left: 5px;
+}
+
+.NavigationItem a {
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+
+.openPreview {
+  animation: openPreview 0.6s ease-out forwards;
+}
+.openPreview:nth-of-type(2) {
+  animation: openPreview 0.8s ease-out forwards;
+}
+.openPreview:nth-of-type(3) {
+  animation: openPreview 1s ease-out forwards;
+}
+.openPreview:last-of-type {
+  animation: openPreview 1.2s ease-out forwards;
+}
+
+@keyframes openPreview {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  50% {
+    opacity: 0.2;
+    transform: translateX(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+
+@media (min-width: 780px) {
+  .NavigationItem a {
+    display: inline-block;
+    position: relative;
+  }
+}
+
+@media (min-width: 500px) {
+  .NavigationItem {
+    margin: 0 1rem;
+    height: 100%;
+    width: auto;
+    align-items: center;
+    border-bottom: none;
+  }
+
+  .NavigationItem a {
+    display: inline-block;
+    padding: 10px 10px 0px 10px;
+    border-bottom: 4px solid transparent;
+  }
+}
+@media (min-width: 1200px) {
+  .NavigationItem:last-of-type{
+    margin-left: 28rem;
+  }
+}
