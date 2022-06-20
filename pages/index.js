@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -12,58 +11,40 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <div id='about'>
+          <p >
+            Reprehenderit consectetur enim tempor proident eiusmod pariatur. Labore ut sunt Lorem laborum dolore tempor in elit irure veniam excepteur deserunt excepteur.
+            Dolor dolore aute aliquip amet exercitation culpa sunt commodo ipsum tempor qui sit eu anim. Et adipisicing mollit tempor est.
+            Voluptate minim velit exercitation laboris do nostrud enim exercitation dolor veniam exercitation laborum qui esse. Laboris ullamco ut et consectetur et ullamco. Qui sunt aliqua ut dolore qui excepteur culpa ipsum voluptate tempor.
+          </p>
+        </div>
+        <div id='cv'>
+          <p >
+            Nostrud eiusmod cillum anim ad eu et anim excepteur est ut qui. Proident nostrud sint do excepteur ex ipsum do deserunt voluptate cillum aliqua in.
+            Sit reprehenderit veniam Lorem laboris proident esse. Qui sunt ullamco magna proident consequat. Sint amet eiusmod consequat laborum irure ea enim pariatur.
+            Mollit aliquip nostrud do aliqua id adipisicing incididunt velit.
+            Quis fugiat id aliqua anim cillum est esse velit ea elit minim amet elit consequat. Eiusmod deserunt enim culpa esse tempor eu aute commodo pariatur culpa anim eu et. Duis aute exercitation in occaecat magna ad non dolore aute velit velit reprehenderit mollit. Do labore laboris ipsum sit dolore sit qui ea id quis. Ea consectetur consectetur officia esse qui sint occaecat nisi Lorem est aliquip eu est pariatur.
+          </p>
+        </div>
+        <div id='projects'>
+          <p >
+            Reprehenderit consectetur enim tempor proident eiusmod pariatur. Labore ut sunt Lorem laborum dolore tempor in elit irure veniam excepteur deserunt excepteur.
+            Dolor dolore aute aliquip amet exercitation culpa sunt commodo ipsum tempor qui sit eu anim. Et adipisicing mollit tempor est.
+            Proident irure do non irure incididunt laboris dolor consectetur sit aute sit. Culpa aliquip laborum magna excepteur labore excepteur consequat sunt culpa sint sint tempor. Enim fugiat fugiat fugiat quis officia amet fugiat quis anim duis cupidatat reprehenderit aute. Deserunt reprehenderit ut ipsum est mollit quis magna pariatur sit. Exercitation nostrud exercitation ex veniam aute est eu consectetur eiusmod commodo deserunt ea adipisicing.
+            Magna excepteur culpa excepteur pariatur commodo amet esse. Pariatur exercitation aute nostrud ea veniam velit. Non esse ex amet amet ad dolor exercitation pariatur magna Lorem commodo amet dolor ea. Consequat pariatur duis magna commodo voluptate. Do aliqua minim duis ut eiusmod consectetur. Sunt velit pariatur nisi dolore ex. Ipsum adipisicing qui voluptate pariatur do anim nostrud incididunt.
+          </p>
+        </div>
+        <div id='contact'>
+          <p >
+            Laborum occaecat incididunt consectetur nostrud officia exercitation ex tempor consectetur cupidatat reprehenderit. Eiusmod ea veniam ad nisi exercitation mollit.
+            Sunt ullamco quis est duis occaecat. Ea non irure fugiat laboris ex fugiat incididunt ut. Mollit dolor nulla qui cillum adipisicing ipsum eu aliquip nulla cillum occaecat.
+            Minim quis id deserunt qui Lorem magna laboris anim occaecat excepteur cupidatat qui ullamco nulla.
+            Voluptate nostrud occaecat nisi sit in labore. Irure et est in minim do duis. Culpa velit irure aliqua laboris consequat dolore elit aliquip reprehenderit quis.
+            Aliquip culpa Lorem proident est exercitation aliquip cupidatat ad excepteur proident. Minim eu et nisi est quis minim exercitation cupidatat do. Velit consectetur ex nisi nisi elit minim adipisicing proident Lorem ipsum. Aute voluptate aliqua aliqua non.
+            Fugiat commodo exercitation aliquip Lorem deserunt sunt et aliquip dolor occaecat ad nostrud fugiat. Ea proident ex veniam cillum veniam qui eu aute ex quis nostrud ad et. Commodo esse laboris culpa officia deserunt in ipsum. Nisi eu minim fugiat non proident dolor. Ea consequat eiusmod ullamco Lorem cillum culpa enim sunt eiusmod ullamco dolore ipsum duis. Ut velit exercitation magna eu incididunt voluptate aute eu Lorem esse laboris.
+          </p>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }

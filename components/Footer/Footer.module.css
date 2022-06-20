@@ -4,12 +4,13 @@
     padding: 10px;
     border-top: 1px solid #eaeaea;
     display: grid;
-    background-color: var(--off-secondary-color);
+    background-color: #000000;
     grid-template-areas:
       " footerMenu "
       " footerSocial ";
     justify-items: center;
     align-items: center;
+    color: white;
   }
   .footerMenu{
     grid-area: footerMenu;
@@ -30,7 +31,7 @@
   @media (min-width: 780px) {
     .footer {
       grid-template-areas: "footerMenu footerSocial";
-      justify-content: space-evenly;
+      justify-content: space-around;
     }
     .footerMenu > a{
       padding: 0 16px;
