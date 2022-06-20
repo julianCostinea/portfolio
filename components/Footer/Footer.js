@@ -1,25 +1,19 @@
 import React from "react";
-import Link from "next/link";
-import { FacebookIcon, InstagramIcon } from "../UI/Icons/Icons";
+import { FacebookIcon, LinkedInIcon } from "../UI/Icons/Icons";
 
 import classes from "./Footer.module.css";
 
 const Footer = () => (
   <footer className={classes.footer}>
     <div className={classes.footerMenu}>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <Link href="/cookies">
-        <a>Cookies</a>
-      </Link>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
+        <a href="#about">About</a>
+        <a href="#cv">C.V.</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </div>
     <div className={classes.footerSocial}>
       {FacebookIcon}
-      {InstagramIcon}
+      {LinkedInIcon}
     </div>
   </footer>
 );

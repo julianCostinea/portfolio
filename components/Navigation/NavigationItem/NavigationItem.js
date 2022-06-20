@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import Link from "next/link";
 // import SideDrawerContext from "../../../store/SideDrawerContext";
 import { useRouter } from "next/router";
 
@@ -11,8 +10,8 @@ const NavigationItem = (props) => {
   return (
     // `${classes.NavigationItem} ${sideDrawerCtx.showMenu ? classes.openPreview : null}`
     <li className={`${classes.NavigationItem}`} id={"listItem"}>
-      <Link id={"navlink"} href={props.link}>
         <a
+          href={props.link}
           // onClick={sideDrawerCtx.hideSideDrawer}
           className={
             router.pathname == props.link
@@ -22,7 +21,6 @@ const NavigationItem = (props) => {
         >
           {props.children}
         </a>
-      </Link>
     </li>
   );
 };

@@ -3,11 +3,16 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Poppins", Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+:root {
+  --main-color: #337AB7;
 }
 
 * {

@@ -12,9 +12,10 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:type" content="website" />
       </Head>
       <Layout>
+        <Component {...pageProps} />
         {/* <SideDrawerContextProvider>
           <Backdrop />
-          <Component {...pageProps} />
+          
         </SideDrawerContextProvider> */}
       </Layout>
     </>

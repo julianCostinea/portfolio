@@ -1,10 +1,14 @@
 .Container{
-    position: fixed;
     z-index: 99;
-    top: 0;
-    left: 0;
     width: 100%;
-    background-image: linear-gradient(to right, var(--main-color), #f0bb2d);
+    background-color: white;
+}
+
+.DesktopOnly {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .BoxShadow{

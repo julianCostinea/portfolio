@@ -51,21 +51,31 @@
 
 @media (min-width: 500px) {
   .NavigationItem {
-    margin: 0 1rem;
-    height: 100%;
-    width: auto;
-    align-items: center;
-    border-bottom: none;
+      margin: 0 1rem;
+      height: 100%;
+      width: auto;
+      align-items: center;
+      border-bottom: none;
+  }
+  
+  .NavigationItem a {
+      color: #161637;
+      display: inline-block;
+      padding: 10px 10px 0px 10px;
+      border-bottom: 4px solid transparent;
   }
 
-  .NavigationItem a {
-    display: inline-block;
-    padding: 10px 10px 0px 10px;
-    border-bottom: 4px solid transparent;
+  .NavigationItem::after,
+  .NavigationItem.active::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      background: #337AB7;
+      transition: width ease-in-out .3s;
   }
-}
-@media (min-width: 1200px) {
-  .NavigationItem:last-of-type{
-    margin-left: 28rem;
+  
+  .NavigationItem:hover::after{
+      width: 100%;
   }
 }
