@@ -16,7 +16,7 @@
     grid-area: footerMenu;
   }
   .footerMenu > a{
-    padding: 0 2px;
+    padding: 0 5px;
     font-weight: 600;
   }
   .footerSocial{

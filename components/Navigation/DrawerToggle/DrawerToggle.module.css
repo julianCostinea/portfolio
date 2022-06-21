@@ -27,7 +27,7 @@
   width: 29px;
   height: 2px;
   margin-bottom: 5px;
-  background-color: var(--line-active);
+  background-color: var(--main-color);
   z-index: 1;
   transform-origin: 5px 0px;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),

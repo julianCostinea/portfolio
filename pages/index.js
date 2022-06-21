@@ -12,6 +12,18 @@ export default function Home() {
 
       <main className={styles.main}>
         <div id='about'>
+          <h2>Hello! I am Julian.</h2>
+          <h2 className={styles.sentence}>I develop apps with the help of 
+            <div className={styles.slidingVertical}>
+              <span>React</span>
+              <span>Express Js</span>
+              <span>Next js</span>
+              <span>MongoDB</span>
+              <span>Php</span>
+              <span>Laravel</span>
+              <span>MySQL</span>
+            </div>
+          </h2>
           <p >
             Reprehenderit consectetur enim tempor proident eiusmod pariatur. Labore ut sunt Lorem laborum dolore tempor in elit irure veniam excepteur deserunt excepteur.
             Dolor dolore aute aliquip amet exercitation culpa sunt commodo ipsum tempor qui sit eu anim. Et adipisicing mollit tempor est.
