@@ -12,7 +12,92 @@
   align-items: center;
 }
 
-.main div{
+.main div {
   margin: 5rem auto;
   padding: 5rem 0;
+}
+
+#about {
+  position: relative
+}
+
+.slidingVertical {
+  display: inline;
+  text-indent: 8px;
+}
+
+.slidingVertical span {
+  animation: topToBottom 14s linear infinite 0s;
+  -ms-animation: topToBottom 14s linear infinite 0s;
+  -webkit-animation: topToBottom 14s linear infinite 0s;
+  color: var(--main-color);
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.slidingVertical span:nth-child(2) {
+  animation-delay: 2s;
+  -ms-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+}
+
+.slidingVertical span:nth-child(3) {
+  animation-delay: 4s;
+  -ms-animation-delay: 4s;
+  -webkit-animation-delay: 4s;
+}
+
+.slidingVertical span:nth-child(4) {
+  animation-delay: 6s;
+  -ms-animation-delay: 6s;
+  -webkit-animation-delay: 6s;
+}
+
+.slidingVertical span:nth-child(5) {
+  animation-delay: 8s;
+  -ms-animation-delay: 8s;
+  -webkit-animation-delay: 8s;
+}
+
+.slidingVertical span:nth-child(6) {
+  animation-delay: 10s;
+  -ms-animation-delay: 10s;
+  -webkit-animation-delay: 10s;
+}
+.slidingVertical span:nth-child(7) {
+  animation-delay: 12s;
+  -ms-animation-delay: 12s;
+  -webkit-animation-delay: 12s;
+}
+
+/*topToBottom Animation*/
+@keyframes topToBottom {
+  0% {
+    opacity: 0;
+  }
+
+  4% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  7% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  14% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  18% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

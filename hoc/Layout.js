@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 import Toolbar from "../components/Navigation/Toolbar/Toolbar";
-// import SideDrawer from "../components/Navigation/SideDrawer/SideDrawer";
+import SideDrawer from "../components/Navigation/SideDrawer/SideDrawer";
 import Footer from "../components/Footer/Footer";
-// import Backdrop from "../components/UI/Backdrop/Backdrop";
+import Backdrop from "../components/UI/Backdrop/Backdrop";
 
 import classes from "./Layout.module.css";
-// import { SideDrawerContextProvider } from "../store/SideDrawerContext";
+import { SideDrawerContextProvider } from "../store/SideDrawerContext";
 
 const Layout = (props) => {
   const [showSideDrawer, setShowSideDrawer] = useState(false);
@@ -19,10 +19,10 @@ const Layout = (props) => {
     <React.Fragment>
       <div className={classes.container}>
         <Toolbar />
-        {/* <SideDrawerContextProvider>
+        <SideDrawerContextProvider>
           <Backdrop />
           <SideDrawer open={showSideDrawer} closed={closeSideDrawer} />
-        </SideDrawerContextProvider> */}
+        </SideDrawerContextProvider>
         <main className={classes.main}>{props.children}</main>
       </div>
       <Footer />
