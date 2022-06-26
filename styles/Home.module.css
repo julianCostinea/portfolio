@@ -1,36 +1,85 @@
-.container {
-  padding: 0 2rem;
-}
-
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.main div {
-  margin: 5rem auto;
-  padding: 5rem 0;
+.main > div {
+  padding: 5rem 2rem;
 }
 
-#about {
-  position: relative
+.homeIntro {
+  width: 100%;
+  position: relative;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
-.slidingVertical {
+.aboutMe{
+  text-align: center;
+}
+.aboutMe p{
+  font-weight: 600;
+}
+.aboutMe p span{
+  color: white;
+}
+
+.aboutMe img {
+  border-radius: 50%;
+}
+
+.inverseNavbar {
+  background-color: white;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+.inverseNavbar a {
+  color: black;
+}
+.inverseNavbar li a:hover {
+  color: var(--main-color);
+}
+
+.inverseNavbar a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: var(--main-color);
+  transition: width ease-in-out 0.3s;
+}
+.inverseNavbar a:hover::after {
+  width: 100%;
+}
+
+.slideUp {
+  transform: translateY(50%);
+  opacity: 0;
+  transition: opacity 250ms ease-in, transform 500ms ease-in;
+}
+
+.slideUp.appear {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+div.slidingVertical {
   display: inline;
   text-indent: 8px;
+  padding: 0rem;
 }
 
 .slidingVertical span {
   animation: topToBottom 14s linear infinite 0s;
   -ms-animation: topToBottom 14s linear infinite 0s;
   -webkit-animation: topToBottom 14s linear infinite 0s;
-  color: var(--main-color);
+  color: white;
   opacity: 0;
   overflow: hidden;
   position: absolute;
@@ -99,5 +148,16 @@
 
   100% {
     opacity: 0;
+  }
+}
+@media (min-width: 810px) {
+  .homeIntro {
+    flex-direction: row;
+  }
+  .main > div {
+    padding: 5rem 8rem;
+  }
+  .aboutMe{
+    text-align: left;
   }
 }

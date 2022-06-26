@@ -1,57 +1,60 @@
 .SideDrawer {
-    position: fixed;
-    width: 280px;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 200;
-    background-color: #F0F0F0;
-    padding: 32px 0px;
-    box-sizing: border-box;
-    transition: transform 0.25s ease-out;
+  position: fixed;
+  width: 280px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  background-color: var(--main-color);
+  padding: 32px 0px;
+  box-sizing: border-box;
+  transition: transform 0.4s ease-out;
 }
-.Footer{
-    position:fixed;
-    bottom:0%;
-    padding: 0.5rem;
-    width:100%;
-    color: white;
-    background-color:var(--main-color);
+.SideDrawer.Open {
+  box-shadow: 3px 0px 5px 0px #2e2e2e;
 }
-
-.SideDrawerSocial{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-weight: bold;
-    margin: 0.5rem auto;
+.Footer {
+  position: fixed;
+  bottom: 0%;
+  padding: 0.5rem;
+  width: 100%;
+  color: white;
+  background-color: black;
 }
 
-.SideDrawerSocial a{
-    margin: 0 5px 0 2px;
+.SideDrawerSocial {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: bold;
+  margin: 0.5rem auto;
+}
+
+.SideDrawerSocial a {
+  margin: 0 5px 0 2px;
 }
 
 @media (min-width: 750px) {
-    .SideDrawer {
-        width: 450px;
-    }
+  .SideDrawer {
+    width: 450px;
+  }
 }
 
 @media (min-width: 780px) {
-    .SideDrawer {
-        display: none;
-    }
+  .SideDrawer {
+    display: none;
+  }
 }
 
 .Open {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .Close {
-    transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 .Logo {
-    height: 11%;
-    margin-bottom: 32px;
+  height: 11%;
+  margin-bottom: 32px;
 }

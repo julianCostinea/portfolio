@@ -11,6 +11,7 @@
   text-decoration: none;
   width: 100%;
   display: block;
+  color: white;
 }
 
 .openPreview {
@@ -41,7 +42,6 @@
   }
 }
 
-
 @media (min-width: 780px) {
   .NavigationItem a {
     display: inline-block;
@@ -51,31 +51,31 @@
 
 @media (min-width: 500px) {
   .NavigationItem {
-      margin: 0 1rem;
-      height: 100%;
-      width: auto;
-      align-items: center;
-      border-bottom: none;
-  }
-  
-  .NavigationItem a {
-      color: #161637;
-      display: inline-block;
-      padding: 10px 10px 0px 10px;
-      border-bottom: 4px solid transparent;
+    margin: 0 1rem;
+    height: 100%;
+    width: auto;
+    align-items: center;
+    border-bottom: none;
   }
 
-  .NavigationItem::after,
-  .NavigationItem.active::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 1px;
-      background: #337AB7;
-      transition: width ease-in-out .3s;
+  .NavigationItem a {
+    display: inline-block;
+    padding: 10px 10px 0px 10px;
+    border-bottom: 4px solid transparent;
+    transition: color ease-in 0.3s;
+    font-size: 1.2rem;
   }
-  
-  .NavigationItem:hover::after{
-      width: 100%;
+
+  .NavigationItem a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: white;
+    transition: width ease-in-out 0.3s;
+  }
+
+  .NavigationItem a:hover::after {
+    width: 100%;
   }
 }

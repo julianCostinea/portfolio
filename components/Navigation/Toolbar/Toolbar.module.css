@@ -19,13 +19,17 @@
 
 .Toolbar {
     margin: 0 auto;
-    margin-top: 10px;
-    width: 80%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    background-color: var(--main-color);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     box-sizing: border-box;
     z-index: 90;
+    transition: background 250ms ease-in;
 }
 
 .Toolbar nav {
