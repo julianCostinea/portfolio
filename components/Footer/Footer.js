@@ -1,5 +1,5 @@
 import React from "react";
-import { FacebookIcon, LinkedInIcon } from "../UI/Icons/Icons";
+import { GitHubIcon, LinkedInIcon } from "../UI/Icons/Icons";
 
 import classes from "./Footer.module.css";
 
@@ -12,7 +12,7 @@ const Footer = () => (
         <a href="#contact">Contact</a>
     </div>
     <div className={classes.footerSocial}>
-      {FacebookIcon}
+      {GitHubIcon}
       {LinkedInIcon}
     </div>
   </footer>

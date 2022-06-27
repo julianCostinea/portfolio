@@ -64,6 +64,37 @@
   transition: opacity 250ms ease-in, transform 500ms ease-in;
 }
 
+.slideUp h1{
+  color: var(--main-color);
+}
+
+.cvSectionContainer{
+  width: 70%;
+}
+
+.cvSection{
+  text-align: left;
+  display: flex;
+}
+.cvSection svg{
+  margin-right: 5px;
+}
+.cvSection h3, .cvSection h4{
+  margin: 10px 0;
+}
+.cvSection h4:first-of-type{
+  margin-top: 1rem;
+  margin-bottom: 7px;
+  color: var(--main-color);
+}
+
+.homeSocial{
+  margin: 14px auto;
+}
+.homeSocial a{
+  margin: 0px 3px;
+}
+
 .slideUp.appear {
   transform: translateY(0);
   opacity: 1;
