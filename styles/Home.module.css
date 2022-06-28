@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.main > div {
+.main>div {
   padding: 5rem 2rem;
 }
 
@@ -21,13 +21,15 @@
   flex-direction: column;
 }
 
-.aboutMe{
+.aboutMe {
   text-align: center;
 }
-.aboutMe p{
+
+.aboutMe p {
   font-weight: 600;
 }
-.aboutMe p span{
+
+.aboutMe p span {
   color: white;
 }
 
@@ -39,9 +41,11 @@
   background-color: white;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
+
 .inverseNavbar a {
   color: black;
 }
+
 .inverseNavbar li a:hover {
   color: var(--main-color);
 }
@@ -54,45 +58,50 @@
   background: var(--main-color);
   transition: width ease-in-out 0.3s;
 }
+
 .inverseNavbar a:hover::after {
   width: 100%;
 }
 
-.slideUp {
-  transform: translateY(50%);
-  opacity: 0;
-  transition: opacity 250ms ease-in, transform 500ms ease-in;
+.cvSectionContainer {
+  width: 100%;
 }
 
-.slideUp h1{
+.cvSectionContainer h1 {
   color: var(--main-color);
 }
 
-.cvSectionContainer{
-  width: 70%;
-}
-
-.cvSection{
+.cvSection {
   text-align: left;
   display: flex;
 }
-.cvSection svg{
+
+.cvSection svg {
   margin-right: 5px;
 }
-.cvSection h3, .cvSection h4{
+
+.cvSection h3, .cvSection h4 {
   margin: 10px 0;
 }
-.cvSection h4:first-of-type{
+
+.cvSection h4:first-of-type {
   margin-top: 1rem;
   margin-bottom: 7px;
   color: var(--main-color);
 }
 
-.homeSocial{
+.homeSocial {
   margin: 14px auto;
 }
-.homeSocial a{
+
+.homeSocial a {
   margin: 0px 3px;
+}
+
+.slideUp {
+  transform: translateY(70%);
+  opacity: 0;
+  transition: opacity 250ms ease-in, transform 500ms ease-out;
 }
 
 .slideUp.appear {
@@ -145,6 +154,7 @@ div.slidingVertical {
   -ms-animation-delay: 10s;
   -webkit-animation-delay: 10s;
 }
+
 .slidingVertical span:nth-child(7) {
   animation-delay: 12s;
   -ms-animation-delay: 12s;
@@ -181,14 +191,21 @@ div.slidingVertical {
     opacity: 0;
   }
 }
+
 @media (min-width: 810px) {
   .homeIntro {
     flex-direction: row;
   }
-  .main > div {
+
+  .cvSectionContainer {
+    width: 70%;
+  }
+
+  .main>div {
     padding: 5rem 8rem;
   }
-  .aboutMe{
+
+  .aboutMe {
     text-align: left;
   }
 }

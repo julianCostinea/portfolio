@@ -1,25 +1,39 @@
 import React, {
     useRef,
     useState,
+    useEffect
 } from "react";
 
 import classes from "./ContactForm.module.css";
 
 const ContactForm = (props) => {
-    const titleRef = useRef();
-    const mainTagsRef = useRef();
-    const secondaryTagsRef = useRef();
+    const nameRef = useRef();
+    const telephoneRef = useRef();
+    const emailRef = useRef();
+    const companyRef = useRef();
+    const descriptionRef = useRef();
+
+
+    useEffect(() => {
+        nameRef.current.errorMessage = "THIS IS AN ERROR"
+
+        console.log(nameRef.current.errorMessage);
+      }, []);
 
     const [errorHeader, setErrorHeader] = useState(null);
 
     const userRecommendationFormHandler = (event) => {
         event.preventDefault();
-        const title = titleRef.current.value.trim();
-        const mainTags = mainTagsRef.current.value.trim();
-        const secondaryTags = secondaryTagsRef.current.value.trim();
-        const formData = { title, mainTags, secondaryTags };
+        const name = nameRef.current.value.trim();
+        console.log(name);
+        return
+        const telephone = telephoneRef.current.value.trim();
+        const email = emailRef.current.value.trim();
+        const company = companyRef.current.value.trim();
+        const description = descriptionRef.current.value.trim();
+        const formData = { name, telephone, email, company, description };
 
-        if (!title) {
+        if (!name) {
             setErrorHeader("Title cannot be empty!");
             return;
         }
@@ -38,41 +52,67 @@ const ContactForm = (props) => {
 
     return (
         <div className={classes.formContainer}>
-            <h3 style={{ marginBlock: 0 }}>
-                Feel free to leave out any fields you&apos;re not sure of
-            </h3>
+            <h2>
+                Have a project or job opportunity we should talk about?
+            </h2>
+            <h3>Drop me a line!</h3>
             <form method="POST" onSubmit={userRecommendationFormHandler}>
                 <h3 className={classes.errorHeader}>{errorHeader}</h3>
                 <div className={classes.Input}>
-                    <label htmlFor="title"> Title*</label>
+                    <label htmlFor="name"> Name</label>
                     <input
-                        name="title"
-                        id="title"
+                        type="text"
+                        name="name"
+                        id="name"
                         required
-                        placeholder="Title of your recommendation"
-                        ref={titleRef}
+                        ref={nameRef}
+                        autoComplete="name"
+                        className={classes.InputElement}
+                        error = {"THIS IS AN ERROR"}
+                    />
+                </div>
+                <div className={classes.Input}>
+                    <label htmlFor="telephone"> Phone Number</label>
+                    <input
+                        type="tel"
+                        name="telephone"
+                        id="telephone"
+                        ref={telephoneRef}
+                        autoComplete="tel"
                         className={classes.InputElement}
                     />
                 </div>
                 <div className={classes.Input}>
-                    <label htmlFor="mainTags"> LAbel</label>
+                    <label htmlFor="email"> Email</label>
                     <input
-                        name="mainTags"
-                        id="mainTags"
-                        ref={mainTagsRef}
-                        placeholder={"mainTagsPlaceholder"}
+                        ref={emailRef}
+                        type="email"
+                        name="email"
+                        id="email"
                         className={classes.InputElement}
                     />
                 </div>
                 <div className={classes.Input}>
-                    <label htmlFor="secondaryTags"> Genre(s)</label>
+                    <label htmlFor="company"> Company (if applicable)</label>
                     <input
-                        ref={secondaryTagsRef}
-                        name="secondaryTags"
-                        id="secondaryTags"
-                        placeholder={"secondaryTagsPlaceholder"}
+                        type="text"
+                        name="company"
+                        id="company"
+                        ref={companyRef}
+                        autoComplete="company"
                         className={classes.InputElement}
                     />
+                </div>
+                <div className={classes.Input}>
+                    <label htmlFor="description">Project/Job description</label>
+                    <textarea
+                        name="description"
+                        id="description"
+                        rows="5"
+                        ref={descriptionRef}
+                        className={classes.InputElement}
+                    >
+                    </textarea>
                 </div>
                 <button type="submit" className={classes.Button}>
                     SEND

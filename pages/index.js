@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useEffect } from "react";
-import Button from "../components/Button/Button";
+import DownloadButton from "../components/Button/DownloadButton";
 import { ProfilePhoto } from "../components/UI/ProfilePhoto/profilePhoto";
 import styles from "../styles/Home.module.css";
 import { LinkedInIcon, GitHubIcon, LaptopIcon, BoxIcon, ForksIcon } from "../components/UI/Icons/Icons";
@@ -14,7 +14,7 @@ export default function Home() {
 
     const appearOptions = {
       threshold: 0,
-      rootMargin: " 0px 0px -200px 0px",
+      rootMargin: " 0px 0px -100px 0px",
     };
     const navigationOptions = {
       rootMargin: "-200px 0px 0px 0px",
@@ -96,18 +96,18 @@ export default function Home() {
             <p>
               Email: <span>julian.costinea@gmail.com</span>
             </p>
-            <Button>
+            <DownloadButton>
               Download C.V.
-            </Button>
+            </DownloadButton>
             <div className={styles.homeSocial}>
               {GitHubIcon}
               {LinkedInIcon}
             </div>
           </div>
         </div>
-        <div className={`${styles.slideUp} ${styles.cvSectionContainer}`} id="cv">
+        <div className={styles.cvSectionContainer} id="cv">
           <h1>Experience</h1>
-          <div className={styles.cvSection}>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>
               {LaptopIcon}
             </div>
@@ -118,7 +118,7 @@ export default function Home() {
               <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
             </div>
           </div>
-          <div className={styles.cvSection}>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>
               {LaptopIcon}
             </div>
@@ -128,7 +128,7 @@ export default function Home() {
               <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
             </div>
           </div>
-          <div className={styles.cvSection}>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>
               {BoxIcon}
             </div>
@@ -139,7 +139,7 @@ export default function Home() {
               <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
             </div>
           </div>
-          <div className={styles.cvSection}>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>
               {ForksIcon}
             </div>
@@ -173,11 +173,8 @@ export default function Home() {
             anim nostrud incididunt.
           </p>
         </div>
-        <div className={styles.slideUp} id="contact">
+        <div id="contact">
           <ContactForm />
-          <p>
-            Laborum occaecat incididunt consectetur nostrud officia exercitation
-          </p>
         </div>
       </main>
     </div>
