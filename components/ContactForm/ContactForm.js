@@ -17,20 +17,29 @@ const ContactForm = (props) => {
     useEffect(() => {
         nameRef.current.errorMessage = "THIS IS AN ERROR"
 
-        console.log(nameRef.current.errorMessage);
       }, []);
 
     const [errorHeader, setErrorHeader] = useState(null);
 
+    const validateInputs = (...inputs) => {
+        for (let i=0; i<inputs.length; i++){
+            if (inputs[i].value === '') {
+                setErrorHeader(inputs[i].errorMessage);
+            }
+        }
+    }
+
     const userRecommendationFormHandler = (event) => {
         event.preventDefault();
         const name = nameRef.current.value.trim();
-        console.log(name);
-        return
         const telephone = telephoneRef.current.value.trim();
         const email = emailRef.current.value.trim();
         const company = companyRef.current.value.trim();
         const description = descriptionRef.current.value.trim();
+        // console.log(nameRef.current.errorMessage);
+        validateInputs (nameRef.current, telephoneRef.current, emailRef.current, companyRef.current, descriptionRef.current);
+        return
+        
         const formData = { name, telephone, email, company, description };
 
         if (!name) {
