@@ -13,17 +13,33 @@ const ContactForm = (props) => {
     const companyRef = useRef();
     const descriptionRef = useRef();
 
-
     useEffect(() => {
-        nameRef.current.errorMessage = "THIS IS AN ERROR"
-
-      }, []);
+        nameRef.current.errorMessage = "Name cannot be shorter than 3 characters."
+        emailRef.current.errorMessage = "Please enter a valid e-mail"
+        descriptionRef.current.errorMessage = "Job/Project description must be longer than 10 characteers."
+    }, []);
 
     const [errorHeader, setErrorHeader] = useState(null);
 
     const validateInputs = (...inputs) => {
-        for (let i=0; i<inputs.length; i++){
-            if (inputs[i].value === '') {
+        setErrorHeader('');
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].style.border = '1px solid #ccc';
+            if (inputs[i].id === "email") {
+                if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputs[i].value)) {
+                    inputs[i].style.border = '1px solid red';
+                    setErrorHeader(inputs[i].errorMessage);
+                    return;
+                }
+            };
+            if (inputs[i].id === "description") {
+                if (inputs[i].value.length < 10) {
+                    inputs[i].style.border = '1px solid red';
+                    setErrorHeader(inputs[i].errorMessage);
+                }
+            }
+            if (inputs[i].value.length < 3) {
+                inputs[i].style.border = '1px solid red';
                 setErrorHeader(inputs[i].errorMessage);
             }
         }
@@ -36,10 +52,9 @@ const ContactForm = (props) => {
         const email = emailRef.current.value.trim();
         const company = companyRef.current.value.trim();
         const description = descriptionRef.current.value.trim();
-        // console.log(nameRef.current.errorMessage);
-        validateInputs (nameRef.current, telephoneRef.current, emailRef.current, companyRef.current, descriptionRef.current);
+        validateInputs(nameRef.current, emailRef.current, descriptionRef.current);
         return
-        
+        //SEND EMAIL LOGIC
         const formData = { name, telephone, email, company, description };
 
         if (!name) {
@@ -77,7 +92,6 @@ const ContactForm = (props) => {
                         ref={nameRef}
                         autoComplete="name"
                         className={classes.InputElement}
-                        error = {"THIS IS AN ERROR"}
                     />
                 </div>
                 <div className={classes.Input}>
@@ -96,6 +110,7 @@ const ContactForm = (props) => {
                     <input
                         ref={emailRef}
                         type="email"
+                        required
                         name="email"
                         id="email"
                         className={classes.InputElement}
