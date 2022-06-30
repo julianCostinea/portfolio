@@ -1,8 +1,10 @@
 import Head from "next/head";
 import { useEffect } from "react";
-import Button from "../components/Button/Button";
+import DownloadButton from "../components/Button/DownloadButton";
 import { ProfilePhoto } from "../components/UI/ProfilePhoto/profilePhoto";
 import styles from "../styles/Home.module.css";
+import { LinkedInIcon, GitHubIcon, LaptopIcon, BoxIcon, ForksIcon } from "../components/UI/Icons/Icons";
+import ContactForm from "../components/ContactForm/ContactForm";
 
 export default function Home() {
   useEffect(() => {
@@ -12,7 +14,7 @@ export default function Home() {
 
     const appearOptions = {
       threshold: 0,
-      rootMargin: " 0px 0px -200px 0px",
+      rootMargin: " 0px 0px -100px 0px",
     };
     const navigationOptions = {
       rootMargin: "-200px 0px 0px 0px",
@@ -30,7 +32,7 @@ export default function Home() {
         }
       });
     },
-    navigationOptions);
+      navigationOptions);
     navigationObserver.observe(homeIntroSection);
 
     const appearOnScroll = new IntersectionObserver(function (
@@ -46,7 +48,7 @@ export default function Home() {
         }
       });
     },
-    appearOptions);
+      appearOptions);
 
     sliders.forEach((slider) => {
       appearOnScroll.observe(slider);
@@ -66,7 +68,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.homeIntro} id="about">
           <div>
-            <h2>Hello! I am Julian.</h2>
+            <h2>Hello! I am <span style={{ color: "white" }}>Julian.</span></h2>
             <h2 className={styles.sentence}>
               I develop apps with the help of
               <div className={styles.slidingVertical}>
@@ -94,28 +96,60 @@ export default function Home() {
             <p>
               Email: <span>julian.costinea@gmail.com</span>
             </p>
-            <Button>
+            <DownloadButton>
               Download C.V.
-            </Button>
-            <br /><br />
-            add github and linkedin
+            </DownloadButton>
+            <div className={styles.homeSocial}>
+              {GitHubIcon}
+              {LinkedInIcon}
+            </div>
           </div>
         </div>
-        <div className={styles.slideUp} id="cv">
-          <p>
-            Nostrud eiusmod cillum anim ad eu et anim excepteur est ut qui.
-            Proident nostrud sint do excepteur ex ipsum do deserunt voluptate
-            cillum aliqua in. Sit reprehenderit veniam Lorem laboris proident
-            esse. Qui sunt ullamco magna proident consequat. Sint amet eiusmod
-            consequat laborum irure ea enim pariatur. Mollit aliquip nostrud do
-            aliqua id adipisicing incididunt velit. Quis fugiat id aliqua anim
-            cillum est esse velit ea elit minim amet elit consequat. Eiusmod
-            deserunt enim culpa esse tempor eu aute commodo pariatur culpa anim
-            eu et. Duis aute exercitation in occaecat magna ad non dolore aute
-            velit velit reprehenderit mollit. Do labore laboris ipsum sit dolore
-            sit qui ea id quis. Ea consectetur consectetur officia esse qui sint
-            occaecat nisi Lorem est aliquip eu est pariatur.
-          </p>
+        <div className={styles.cvSectionContainer} id="cv">
+          <h1>Experience</h1>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {LaptopIcon}
+            </div>
+            <div>
+              <h4>2016-2022</h4>
+              <h3>HR Consultant & IT Manager</h3>
+              <h4>GoWork Studenterhjælp ApS</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {LaptopIcon}
+            </div>
+            <div>
+              <h4>2018-2022</h4>
+              <h3>Freelance Developer</h3>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {BoxIcon}
+            </div>
+            <div>
+              <h4>2014-2016</h4>
+              <h3>Warehouse worker</h3>
+              <h4>Alex Andersen Ølund A/S</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {ForksIcon}
+            </div>
+            <div>
+              <h4>2012-2014</h4>
+              <h3>Part-Time Waiter/Bartender</h3>
+              <h4>Hotel Metropolis</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
         </div>
         <div className={styles.slideUp} id="projects">
           <p>
@@ -139,29 +173,8 @@ export default function Home() {
             anim nostrud incididunt.
           </p>
         </div>
-        <div className={styles.slideUp} id="contact">
-          <p>
-            Laborum occaecat incididunt consectetur nostrud officia exercitation
-            ex tempor consectetur cupidatat reprehenderit. Eiusmod ea veniam ad
-            nisi exercitation mollit. Sunt ullamco quis est duis occaecat. Ea
-            non irure fugiat laboris ex fugiat incididunt ut. Mollit dolor nulla
-            qui cillum adipisicing ipsum eu aliquip nulla cillum occaecat. Minim
-            quis id deserunt qui Lorem magna laboris anim occaecat excepteur
-            cupidatat qui ullamco nulla. Voluptate nostrud occaecat nisi sit in
-            labore. Irure et est in minim do duis. Culpa velit irure aliqua
-            laboris consequat dolore elit aliquip reprehenderit quis. Aliquip
-            culpa Lorem proident est exercitation aliquip cupidatat ad excepteur
-            proident. Minim eu et nisi est quis minim exercitation cupidatat do.
-            Velit consectetur ex nisi nisi elit minim adipisicing proident Lorem
-            ipsum. Aute voluptate aliqua aliqua non. Fugiat commodo exercitation
-            aliquip Lorem deserunt sunt et aliquip dolor occaecat ad nostrud
-            fugiat. Ea proident ex veniam cillum veniam qui eu aute ex quis
-            nostrud ad et. Commodo esse laboris culpa officia deserunt in ipsum.
-            Nisi eu minim fugiat non proident dolor. Ea consequat eiusmod
-            ullamco Lorem cillum culpa enim sunt eiusmod ullamco dolore ipsum
-            duis. Ut velit exercitation magna eu incididunt voluptate aute eu
-            Lorem esse laboris.
-          </p>
+        <div id="contact">
+          <ContactForm />
         </div>
       </main>
     </div>

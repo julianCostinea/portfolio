@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import SideDrawerContext from "../../../store/SideDrawerContext";
 import NavigationItems from "../NavigationItems/NavigationItems";
 import DrawerToggle from "../DrawerToggle/DrawerToggle";
-import { MailIcon, LinkedInIcon } from "../../UI/Icons/Icons";
+import { MailIcon, LinkedInIcon, GitHubIcon } from "../../UI/Icons/Icons";
 
 import classes from "./SideDrawer.module.css";
 
@@ -24,11 +24,11 @@ const SideDrawer = () => {
         </nav>
         <div className={classes.Footer}>
           <div className={classes.SideDrawerSocial}>
-            {MailIcon}&nbsp;
-            <a href="mailto:julian.costinea@gmail.com">julian.costinea@gmail.com</a>
+            {LinkedInIcon}{GitHubIcon}
           </div>
           <div className={classes.SideDrawerSocial}>
-            {LinkedInIcon}<a target="_blank" href="http://www.linkedin.com">LinkedIn/JulianCostinea</a>
+            {MailIcon}&nbsp;
+            <a href="mailto:julian.costinea@gmail.com">julian.costinea@gmail.com</a>
           </div>
         </div>
       </div>
