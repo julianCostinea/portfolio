@@ -1,53 +1,66 @@
-.Label {
+.label {
   position: relative;
   top: 4px;
-  height: 4rem;
-  width: 4rem;
+  height: 20px;
+  width: 20px;
   display: inline-block;
-  border: 5px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255,255,255,0.2);
   border-radius: 50%;
-  border-left-color: var(--main-color);
+  border-left-color: lightgreen;
   animation: rotate 0.8s linear infinite;
 }
 
-.smallLabel {
-  position: relative;
-  top: 4px;
-  height: 1.5rem;
-  width: 1.5rem;
-  display: inline-block;
-  border: 5px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  border-left-color: var(--main-color);
-  animation: rotate 0.8s linear infinite;
-}
-
-.formLoader {
-  height: 2rem;
-  width: 2rem;
-  border-left-color: #5e71af;
-  animation: rotateFormLoader 0.8s linear infinite;
+.labelConfirmed {
+  animation: none;
+  border-color: lightgreen;
+  transition: border-color 0.5s ease-out;
 }
 
 @keyframes rotate {
-  50% {
-    border-left-color: var(var(--off-main-color));
+  50%{
+      border-left-color: #9b59b6;
   }
-  75% {
-    border-left-color: var(--main-color);
+  75%{
+      border-left-color: #e67e22;
   }
-  100% {
-    transform: rotate(360deg);
+  100%{
+      transform: rotate(360deg);
   }
 }
-@keyframes rotateFormLoader {
-  50% {
-    border-left-color: #5e71af;
+
+.checkIcon:after{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 4px;
+  transform: scaleX(-1) rotate(135deg);
+  height: 6px;
+  width: 3px;
+  border-top: 2px solid lightgreen;
+  border-right: 2px solid lightgreen;
+  transform-origin: left top;
+  animation: check-icon 0.8s ease;
+}
+
+@keyframes check-icon {
+  0%{
+      height: 0;
+      width: 0;
+      opacity: 1;
   }
-  75% {
-    border-left-color: #5e71af;
+  20%{
+      height: 0;
+      width: 3px;
+      opacity: 1;
   }
-  100% {
-    transform: rotate(360deg);
+  40%{
+      height: 6px;
+      width:3px;
+      opacity: 1;
+  }
+  100%{
+      height: 6px;
+      width: 3px;
+      opacity: 1;
   }
 }

@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 import classes from "./ContactForm.module.css";
+import Loader from "../UI/Loader/Loader";
 
 const ContactForm = (props) => {
   const nameRef = useRef();
@@ -9,11 +10,6 @@ const ContactForm = (props) => {
   const emailRef = useRef();
   const companyRef = useRef();
   const descriptionRef = useRef();
-  const templateParams = {
-    from_name: "Julio",
-    to_name: "Person",
-    message: "message",
-  };
 
   useEffect(() => {
     nameRef.current.errorMessage = "Name cannot be shorter than 3 characters.";
@@ -23,6 +19,9 @@ const ContactForm = (props) => {
   }, []);
 
   const [errorHeader, setErrorHeader] = useState(null);
+  const [successHeader, setSuccessHeader] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   const validateInputs = (...inputs) => {
     setErrorHeader("");
@@ -57,6 +56,14 @@ const ContactForm = (props) => {
     const email = emailRef.current.value.trim();
     const company = companyRef.current.value.trim();
     const description = descriptionRef.current.value.trim();
+    const templateParams = {
+      name,
+      telephone,
+      email,
+      company,
+      description
+    };
+
     validateInputs(nameRef.current, emailRef.current, descriptionRef.current);
     emailjs
       .send(
@@ -67,31 +74,15 @@ const ContactForm = (props) => {
       )
       .then(
         (response) => {
-          console.log("SUCCESS!", response.status, response.text);
+          if (response.status == '200') {
+            setSuccessHeader("Email has been sent!");
+          }
         },
         (err) => {
-          console.log("FAILED...", err);
+          setErrorHeader("Something went wrong, fix is on the way. In the meantime, you can send me an email at julian.costinea@gmail.com");
         }
       );
     return;
-    //SEND EMAIL LOGIC
-    const formData = { name, telephone, email, company, description };
-
-    if (!name) {
-      setErrorHeader("Title cannot be empty!");
-      return;
-    }
-
-    fetch("www.nothing.com", {
-      method: "POST",
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        setErrorHeader(`Something went wrong. We're looking into it`);
-      });
   };
 
   return (
@@ -100,6 +91,7 @@ const ContactForm = (props) => {
       <h3>Drop me a line!</h3>
       <form method="POST" onSubmit={userRecommendationFormHandler}>
         <h3 className={classes.errorHeader}>{errorHeader}</h3>
+        <h3 className={classes.successHeader}>{successHeader}</h3>
         <div className={classes.Input}>
           <label htmlFor="name"> Name</label>
           <input
@@ -156,7 +148,15 @@ const ContactForm = (props) => {
           ></textarea>
         </div>
         <button type="submit" className={classes.Button}>
-          SEND
+          SEND &nbsp;
+          <div
+            className={classes.checkmarkDiv}
+            // style={{
+            //   visibility: isLoading ? "visible" : "hidden",
+            // }}
+          >
+            <Loader hideCheckmark={isCompleted} />
+          </div>
         </button>
       </form>
     </div>

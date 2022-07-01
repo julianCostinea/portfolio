@@ -74,7 +74,7 @@ export default function Home() {
               <div className={styles.slidingVertical}>
                 <span>React</span>
                 <span>Express</span>
-                <span>Next js</span>
+                <span>NEXT.js</span>
                 <span>MongoDB</span>
                 <span>Php</span>
                 <span>Laravel</span>
