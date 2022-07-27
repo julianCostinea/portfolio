@@ -18,8 +18,7 @@ const ContactForm = (props) => {
       "Job/Project description must be longer than 10 characteers.";
   }, []);
 
-  const [errorHeader, setErrorHeader] = useState(null);
-  const [successHeader, setSuccessHeader] = useState(null);
+  const [errorHeader, setErrorHeader] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
 
@@ -33,6 +32,7 @@ const ContactForm = (props) => {
         ) {
           inputs[i].style.border = "1px solid red";
           setErrorHeader(inputs[i].errorMessage);
+          setIsLoading(false);
           return;
         }
       }
@@ -40,17 +40,24 @@ const ContactForm = (props) => {
         if (inputs[i].value.length < 10) {
           inputs[i].style.border = "1px solid red";
           setErrorHeader(inputs[i].errorMessage);
+          setIsLoading(false);
+          return;
         }
       }
       if (inputs[i].value.length < 3) {
         inputs[i].style.border = "1px solid red";
         setErrorHeader(inputs[i].errorMessage);
+        setIsLoading(false);
+        return;
       }
     }
+    return true;
   };
 
-  const userRecommendationFormHandler = (event) => {
+  const userRecommendationFormHandler =  (event) => {
     event.preventDefault();
+    setIsLoading(true);
+
     const name = nameRef.current.value.trim();
     const telephone = telephoneRef.current.value.trim();
     const email = emailRef.current.value.trim();
@@ -64,25 +71,28 @@ const ContactForm = (props) => {
       description
     };
 
-    validateInputs(nameRef.current, emailRef.current, descriptionRef.current);
-    emailjs
-      .send(
-        "service_j9zx7nl",
-        "template_vvlalpg",
-        templateParams,
-        "97iBAgNYtpWNFBuZj"
-      )
-      .then(
-        (response) => {
-          if (response.status == '200') {
-            setSuccessHeader("Email has been sent!");
-          }
-        },
-        (err) => {
+    const validForm = validateInputs(nameRef.current, emailRef.current, descriptionRef.current);
+
+    if (validForm) {
+      emailjs
+        .send(
+          "service_j9zx7nl",
+          "template_vvlalpg",
+          templateParams,
+          "97iBAgNYtpWNFBuZj"
+        )
+        .then(
+          (response) => {
+            if (response.status == '200') {
+              setIsCompleted(true);
+            }
+          },
+        ).catch((err) => {
           setErrorHeader("Something went wrong, fix is on the way. In the meantime, you can send me an email at julian.costinea@gmail.com");
-        }
-      );
-    return;
+          setIsLoading(false);
+        });
+    }
+
   };
 
   return (
@@ -91,14 +101,12 @@ const ContactForm = (props) => {
       <h3>Drop me a line!</h3>
       <form method="POST" onSubmit={userRecommendationFormHandler}>
         <h3 className={classes.errorHeader}>{errorHeader}</h3>
-        <h3 className={classes.successHeader}>{successHeader}</h3>
         <div className={classes.Input}>
           <label htmlFor="name"> Name</label>
           <input
             type="text"
             name="name"
             id="name"
-            required
             ref={nameRef}
             autoComplete="name"
             className={classes.InputElement}
@@ -120,7 +128,6 @@ const ContactForm = (props) => {
           <input
             ref={emailRef}
             type="email"
-            required
             name="email"
             id="email"
             className={classes.InputElement}
@@ -147,13 +154,13 @@ const ContactForm = (props) => {
             className={classes.InputElement}
           ></textarea>
         </div>
-        <button type="submit" className={classes.Button}>
+        <button type="submit" className={classes.Button} disabled={isCompleted ? true : false}>
           SEND &nbsp;
           <div
             className={classes.checkmarkDiv}
-            // style={{
-            //   visibility: isLoading ? "visible" : "hidden",
-            // }}
+            style={{
+              visibility: isLoading ? "visible" : "hidden",
+            }}
           >
             <Loader hideCheckmark={isCompleted} />
           </div>

@@ -44,33 +44,44 @@
 
 .Button {
   background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1rem;
+  min-width: 8rem;
   color: white;
   border: 2px solid var(--main-color);
-  padding: 10px;
+  padding: 10px 10px 10px 30px;
   text-align: center;
   text-decoration: none;
-  margin: 0;
-  margin-left: 0;
+  margin: 0 auto;
   box-sizing: border-box;
-  transition-duration: 0.4s;
+  transition: box-shadow 0.5s linear;
   cursor: pointer;
   border-radius: 10px;
   font-weight: 600;
 }
-
-.Button:hover {
-  background-color: white;
-  color: var(--main-color);
+.Button:disabled, .Button[disabled]{
+  cursor: not-allowed;
+  opacity: 0.8;
 }
 
-.errorInput{
+.checkmarkDiv {
+  display: inline-block;
+}
+
+.Button:hover {
+  box-shadow: 0px 0px 0px 2px var(--main-color); 
+}
+
+.errorInput {
   border: 2px solid red;
 }
 
 .errorHeader {
   color: red;
 }
+
 .successHeader {
   color: green;
 }
