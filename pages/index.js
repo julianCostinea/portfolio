@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import DownloadButton from "../components/Button/DownloadButton";
 import { ProfilePhoto } from "../components/UI/ProfilePhoto/profilePhoto";
 import styles from "../styles/Home.module.css";
-import { LinkedInIcon, GitHubIcon, LaptopIcon, BoxIcon, ForksIcon } from "../components/UI/Icons/Icons";
+import * as Icons from "../components/UI/Icons/Icons";
 import ContactForm from "../components/ContactForm/ContactForm";
+import HighlightedProject from "../components/HighlightedProject/HighlightedProject";
 
 export default function Home() {
   useEffect(() => {
@@ -67,14 +68,14 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.homeIntro} id="about">
-          <div>
+          <div className={styles.rotatingSentence}>
             <h2>Hello! I am <span style={{ color: "white" }}>Julian.</span></h2>
             <h2 className={styles.sentence}>
               I develop apps with the help of
               <div className={styles.slidingVertical}>
                 <span>React</span>
                 <span>Express</span>
-                <span>Next js</span>
+                <span>NEXT.js</span>
                 <span>MongoDB</span>
                 <span>Php</span>
                 <span>Laravel</span>
@@ -100,8 +101,11 @@ export default function Home() {
               Download C.V.
             </DownloadButton>
             <div className={styles.homeSocial}>
-              {GitHubIcon}
-              {LinkedInIcon}
+              {Icons.GitHubIcon}
+              {Icons.LinkedInIcon}
+            </div>
+            <div className={styles.photoCredit}>
+              Photo by <a href="https://unsplash.com/@antoinerault?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Antoine Rault</a> on <a href="https://unsplash.com/s/photos/mountains?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
             </div>
           </div>
         </div>
@@ -109,7 +113,7 @@ export default function Home() {
           <h1>Experience</h1>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>
-              {LaptopIcon}
+              {Icons.LaptopIcon}
             </div>
             <div>
               <h4>2016-2022</h4>
@@ -120,7 +124,7 @@ export default function Home() {
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>
-              {LaptopIcon}
+              {Icons.LaptopIcon}
             </div>
             <div>
               <h4>2018-2022</h4>
@@ -130,7 +134,7 @@ export default function Home() {
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>
-              {BoxIcon}
+              {Icons.BoxIcon}
             </div>
             <div>
               <h4>2014-2016</h4>
@@ -141,7 +145,7 @@ export default function Home() {
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>
-              {ForksIcon}
+              {Icons.ForksIcon}
             </div>
             <div>
               <h4>2012-2014</h4>
@@ -150,28 +154,129 @@ export default function Home() {
               <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
             </div>
           </div>
+          <h1>Education</h1>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {Icons.EducationIcon}
+            </div>
+            <div>
+              <h4>2020</h4>
+              <h3>Next JS</h3>
+              <h4>Academind</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {Icons.EducationIcon}
+            </div>
+            <div>
+              <h4>2019</h4>
+              <h3>ReactJS (including Hooks and Redux)</h3>
+              <h4>Academind</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {Icons.EducationIcon}
+            </div>
+            <div>
+              <h4>2019</h4>
+              <h3>MongoDB</h3>
+              <h4>Academind</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {Icons.EducationIcon}
+            </div>
+            <div>
+              <h4>2019</h4>
+              <h3>Express JS</h3>
+              <h4>Academind</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {Icons.EducationIcon}
+            </div>
+            <div>
+              <h4>2019</h4>
+              <h3>ES6</h3>
+              <h4>WesBos</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {Icons.EducationIcon}
+            </div>
+            <div>
+              <h4>2018</h4>
+              <h3>Laravel</h3>
+              <h4>Udemy</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {Icons.EducationIcon}
+            </div>
+            <div>
+              <h4>2018</h4>
+              <h3>MySQL</h3>
+              <h4>Udemy</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {Icons.EducationIcon}
+            </div>
+            <div>
+              <h4>2018</h4>
+              <h3>Basic and Advanced PHP</h3>
+              <h4>Udemy</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {Icons.EducationIcon}
+            </div>
+            <div>
+              <h4>2018</h4>
+              <h3>Basics of VBA (Visual Basic for Application)</h3>
+              <h4>Udemy</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>
+              {Icons.EducationIcon}
+            </div>
+            <div>
+              <h4>2018</h4>
+              <h3>HTML, CSS &amp; Javascript</h3>
+              <h4>Codecademy</h4>
+              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+            </div>
+          </div>
         </div>
-        <div className={styles.slideUp} id="projects">
-          <p>
-            Reprehenderit consectetur enim tempor proident eiusmod pariatur.
-            Labore ut sunt Lorem laborum dolore tempor in elit irure veniam
-            excepteur deserunt excepteur. Dolor dolore aute aliquip amet
-            exercitation culpa sunt commodo ipsum tempor qui sit eu anim. Et
-            adipisicing mollit tempor est. Proident irure do non irure
-            incididunt laboris dolor consectetur sit aute sit. Culpa aliquip
-            laborum magna excepteur labore excepteur consequat sunt culpa sint
-            sint tempor. Enim fugiat fugiat fugiat quis officia amet fugiat quis
-            anim duis cupidatat reprehenderit aute. Deserunt reprehenderit ut
-            ipsum est mollit quis magna pariatur sit. Exercitation nostrud
-            exercitation ex veniam aute est eu consectetur eiusmod commodo
-            deserunt ea adipisicing. Magna excepteur culpa excepteur pariatur
-            commodo amet esse. Pariatur exercitation aute nostrud ea veniam
-            velit. Non esse ex amet amet ad dolor exercitation pariatur magna
-            Lorem commodo amet dolor ea. Consequat pariatur duis magna commodo
-            voluptate. Do aliqua minim duis ut eiusmod consectetur. Sunt velit
-            pariatur nisi dolore ex. Ipsum adipisicing qui voluptate pariatur do
-            anim nostrud incididunt.
-          </p>
+        <div id="projects" className={styles.projects}>
+          <h1>My Work</h1>
+          <h2>Highlighted projects</h2>
+          <div className={styles.highlightedProjectsContainer}>
+            <HighlightedProject projectTitle="WeHireYou" projectDescription="A website" projectTechnologies="NextJS, React, Typescript" />
+            <HighlightedProject projectTitle="SpotMyNext" projectDescription="A website" projectTechnologies="NextJS, React" />
+            <HighlightedProject projectTitle="GoWork ApS" projectDescription="A website" projectTechnologies="NextJS, React" />
+          </div>
+          <div className={styles.otherProjectsContainer}>
+            <h2>Other projects</h2>
+          </div>
         </div>
         <div id="contact">
           <ContactForm />

@@ -14,7 +14,11 @@
 .homeIntro {
   width: 100%;
   position: relative;
-  background-color: var(--main-color);
+  background-image: url('/introPhoto.jpg');
+  opacity:90% ; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -23,6 +27,7 @@
 
 .aboutMe {
   text-align: center;
+  opacity:1 ;
 }
 
 .aboutMe p {
@@ -37,17 +42,17 @@
   border-radius: 50%;
 }
 
+.photoCredit{
+  font-size: 10px;
+}
+
 .inverseNavbar {
   background-color: white;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 
 .inverseNavbar a {
-  color: black;
-}
-
-.inverseNavbar li a:hover {
-  color: var(--main-color);
+  color: #2D9DCA;
 }
 
 .inverseNavbar a::after {
@@ -55,7 +60,7 @@
   display: block;
   width: 0;
   height: 3px;
-  background: var(--main-color);
+  background: #2D9DCA;
   transition: width ease-in-out 0.3s;
 }
 
@@ -67,7 +72,7 @@
   width: 100%;
 }
 
-.cvSectionContainer h1 {
+.cvSectionContainer h1, .projects h1 {
   color: var(--main-color);
 }
 
@@ -78,6 +83,9 @@
 
 .cvSection svg {
   margin-right: 5px;
+}
+.cvSection svg path {
+  fill: #00ABE9;
 }
 
 .cvSection h3, .cvSection h4 {
@@ -96,6 +104,22 @@
 
 .homeSocial a {
   margin: 0px 3px;
+}
+
+.projects > h2{
+  text-decoration: underline;
+  text-decoration-color: var(--main-color);
+}
+
+.otherProjectsContainer {
+  margin-top: 3rem;
+}
+
+.highlightedProjectsContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
 }
 
 .slideUp {
@@ -197,15 +221,24 @@ div.slidingVertical {
     flex-direction: row;
   }
 
-  .cvSectionContainer {
-    width: 70%;
+  .rotatingSentence{
+    padding-right: 7rem;
   }
 
   .main>div {
-    padding: 5rem 8rem;
+    padding: 2rem 8rem;
   }
 
   .aboutMe {
     text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cvSectionContainer {
+    width: 80%;
+  }
+  .highlightedProjectsContainer{
+    flex-direction: row;
   }
 }

@@ -23,7 +23,7 @@
     top: 0;
     z-index: 99;
     width: 100%;
-    background-color: var(--main-color);
+    background-color: #2D9DCA;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
