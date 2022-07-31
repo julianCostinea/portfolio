@@ -13,10 +13,6 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Layout>
         <Component {...pageProps} />
-        {/* <SideDrawerContextProvider>
-          <Backdrop />
-          
-        </SideDrawerContextProvider> */}
       </Layout>
     </>
   );

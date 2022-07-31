@@ -1,5 +1,6 @@
 .main {
   min-height: 100vh;
+  width: 100%;
   padding: 2rem 0;
   flex: 1;
   display: flex;
@@ -8,12 +9,13 @@
 }
 
 .main>div {
-  padding: 5rem 2rem;
+  padding: 1rem 2rem;
+  max-width: 100%;
 }
 
 .homeIntro {
-  width: 100%;
   position: relative;
+  width: 100%;
   background-image: url('/introPhoto.jpg');
   opacity:90% ; 
   background-size: cover;
@@ -114,9 +116,13 @@
 .otherProjectsContainer {
   margin-top: 3rem;
 }
+.otherProjectsContainer ul{
+  list-style: none;
+}
 
 .highlightedProjectsContainer{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   gap: 5rem;
@@ -216,7 +222,7 @@ div.slidingVertical {
   }
 }
 
-@media (min-width: 810px) {
+@media (min-width: 1200px) {
   .homeIntro {
     flex-direction: row;
   }
@@ -236,7 +242,7 @@ div.slidingVertical {
 
 @media (min-width: 1200px) {
   .cvSectionContainer {
-    width: 80%;
+    width: 70%;
   }
   .highlightedProjectsContainer{
     flex-direction: row;

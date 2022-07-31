@@ -1,14 +1,38 @@
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import DownloadButton from "../components/Button/DownloadButton";
 import { ProfilePhoto } from "../components/UI/ProfilePhoto/profilePhoto";
 import styles from "../styles/Home.module.css";
 import * as Icons from "../components/UI/Icons/Icons";
 import ContactForm from "../components/ContactForm/ContactForm";
 import HighlightedProject from "../components/HighlightedProject/HighlightedProject";
+import FetchedRepo from "../components/FetchedRepo/FetchedRepo";
 
 export default function Home() {
+  const [fetchedRepos, setFetchedRepos] = useState("");
   useEffect(() => {
+    const repos = fetch(`https://api.github.com/users/julianCostinea/repos`)
+      .then((response) => response.json())
+      .then((data) => {
+        setFetchedRepos(
+          data.map((item, index) => {
+            if (item.stargazers_count != 0) {
+              return (
+                <FetchedRepo
+                  key={item.full_name}
+                  name={item.name}
+                  description={item.description}
+                  url={item.html_url}
+                />
+              );
+            }
+          })
+        );
+      })
+      .catch(() => {
+        console.log(`Something went wrong`);
+      });
+
     const sliders = document.querySelectorAll(`.${styles["slideUp"]}`);
     const homeIntroSection = document.querySelector(`.${styles["homeIntro"]}`);
     const navBar = document.querySelector("header");
@@ -33,7 +57,7 @@ export default function Home() {
         }
       });
     },
-      navigationOptions);
+    navigationOptions);
     navigationObserver.observe(homeIntroSection);
 
     const appearOnScroll = new IntersectionObserver(function (
@@ -49,14 +73,14 @@ export default function Home() {
         }
       });
     },
-      appearOptions);
+    appearOptions);
 
     sliders.forEach((slider) => {
       appearOnScroll.observe(slider);
     });
   }, []);
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Julian | Web Developer</title>
         <meta
@@ -69,7 +93,9 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.homeIntro} id="about">
           <div className={styles.rotatingSentence}>
-            <h2>Hello! I am <span style={{ color: "white" }}>Julian.</span></h2>
+            <h2>
+              Hello! I am <span style={{ color: "white" }}>Julian.</span>
+            </h2>
             <h2 className={styles.sentence}>
               I develop apps with the help of
               <div className={styles.slidingVertical}>
@@ -79,7 +105,7 @@ export default function Home() {
                 <span>MongoDB</span>
                 <span>Php</span>
                 <span>Laravel</span>
-                <span>MySQL</span>
+                <span>mySQL</span>
               </div>
             </h2>
           </div>
@@ -97,172 +123,221 @@ export default function Home() {
             <p>
               Email: <span>julian.costinea@gmail.com</span>
             </p>
-            <DownloadButton>
-              Download C.V.
-            </DownloadButton>
+            <DownloadButton>Download C.V.</DownloadButton>
             <div className={styles.homeSocial}>
-              {Icons.GitHubIcon}
-              {Icons.LinkedInIcon}
+              <a
+                href="https://github.com/julianCostinea"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {Icons.GitHubIcon}
+              </a>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {Icons.LinkedInIcon}
+              </a>
             </div>
             <div className={styles.photoCredit}>
-              Photo by <a href="https://unsplash.com/@antoinerault?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Antoine Rault</a> on <a href="https://unsplash.com/s/photos/mountains?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+              Photo by{" "}
+              <a href="https://unsplash.com/@antoinerault?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                Antoine Rault
+              </a>{" "}
+              on{" "}
+              <a href="https://unsplash.com/s/photos/mountains?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                Unsplash
+              </a>
             </div>
           </div>
         </div>
         <div className={styles.cvSectionContainer} id="cv">
           <h1>Experience</h1>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.LaptopIcon}
-            </div>
+            <div>{Icons.LaptopIcon}</div>
             <div>
               <h4>2016-2022</h4>
               <h3>HR Consultant & IT Manager</h3>
               <h4>GoWork Studenterhjælp ApS</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>
+                I have worked with hiring new temps, invoicing and paryroll.{" "}
+                <br />
+                As the IT manager I developed tools to help with invoicing and
+                payroll, built in VBA and Excel.
+                <br />
+                Also developed the company website and recruiting portal.
+              </p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.LaptopIcon}
-            </div>
+            <div>{Icons.LaptopIcon}</div>
             <div>
               <h4>2018-2022</h4>
               <h3>Freelance Developer</h3>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>
+                Built apps and websites for clients on upwork.com and
+                freelancer.com <br />
+                Tools used consist of React, Next.js, MongoDB, Php, Laravel and
+                mySQL.
+              </p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.BoxIcon}
-            </div>
+            <div>{Icons.BoxIcon}</div>
             <div>
               <h4>2014-2016</h4>
               <h3>Warehouse worker</h3>
               <h4>Alex Andersen Ølund A/S</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>
+                I have worked mostly with packing flowers for different
+                supermarkets in Denmark as well as clients in other european
+                countries.
+              </p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.ForksIcon}
-            </div>
+            <div>{Icons.ForksIcon}</div>
             <div>
               <h4>2012-2014</h4>
-              <h3>Part-Time Waiter/Bartender</h3>
+              <h3>Waiter/Bartender</h3>
               <h4>Hotel Metropolis</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>
+                Both waiter and bar tending work during the summers from 2012 to
+                2014.
+              </p>
             </div>
           </div>
           <h1>Education</h1>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.EducationIcon}
-            </div>
+            <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2020</h4>
               <h3>Next JS</h3>
               <h4>Academind</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>
+                File-based Routing, Page Pre-Rendering (Static Generation &amp;
+                Server Side Rendering), Middlewares, API Routes
+              </p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.EducationIcon}
-            </div>
+            <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2019</h4>
               <h3>ReactJS (including Hooks and Redux)</h3>
               <h4>Academind</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>
+                Class Components &amp; Functional Components/Hooks, Redux,
+                Optimizing, Portals, Animations, React Router, Unit Testing(with
+                Jest)
+              </p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.EducationIcon}
-            </div>
+            <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2019</h4>
               <h3>MongoDB</h3>
               <h4>Academind</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>
+                CRUD (Create, Read, Update, Delete) operations, Aggregation
+                Framework, Indexes, Connecting with Node.js driver
+              </p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.EducationIcon}
-            </div>
+            <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2019</h4>
-              <h3>Express JS</h3>
+              <h3>Node &amp; Express JS</h3>
               <h4>Academind</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>
+                Routing, Authentication &amp; Authorization, Session &amp;
+                Cookies, Error Handling, File Upload, Unit Testing(with Jest),
+                REST APIs, Middlewares, GraphQL
+              </p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.EducationIcon}
-            </div>
+            <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2019</h4>
               <h3>ES6</h3>
               <h4>WesBos</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>Destructuring, Spread/Rest, Promises, ESLint, Async+Await</p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.EducationIcon}
-            </div>
+            <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2018</h4>
               <h3>Laravel</h3>
               <h4>Udemy</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>
+                Routing, MVC(Model, View, Controller), Testing, Eloquent,
+                Authentication, Database Migration,Seeding&amp;Factories,
+                Caching, File System
+              </p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.EducationIcon}
-            </div>
-            <div>
-              <h4>2018</h4>
-              <h3>MySQL</h3>
-              <h4>Udemy</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
-            </div>
-          </div>
-          <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.EducationIcon}
-            </div>
+            <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2018</h4>
               <h3>Basic and Advanced PHP</h3>
-              <h4>Udemy</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <h4>Welling Thomson &amp; Udemy</h4>
+              <p>
+                Data types, Error and Exception Handling, Object-Oriented PHP,
+                Managing Date &amp; Time File System, Session Control,
+                Authentication &amp; Authorization, CRUD, Rest APIs
+              </p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>
-              {Icons.EducationIcon}
-            </div>
+            <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2018</h4>
-              <h3>Basics of VBA (Visual Basic for Application)</h3>
-              <h4>Udemy</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <h3>mySQL</h3>
+              <h4>Welling Thomson &amp; Udemy</h4>
+              <p>
+                Creating Tables, CRUD operations (INSERT, SELECT, UPDATE,
+                DELETE), Table relationships (One to One, One to Many, Many to
+                Many), User Administration
+              </p>
             </div>
           </div>
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>{Icons.EducationIcon}</div>
             <div>
-              {Icons.EducationIcon}
+              <h4>2018</h4>
+              <h3>Git &amp; GitHub</h3>
+              <h4>Udemy</h4>
+              <p>Commits, Branching, Merging, Rebasing, Stashing</p>
             </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>{Icons.EducationIcon}</div>
+            <div>
+              <h4>2018</h4>
+              <h3>Basics of VBA (Visual Basic for Applications)</h3>
+              <h4>Udemy</h4>
+              <p>
+                Data Types, Functions, Loops, Forms, Recording and Adapting
+                Macros
+              </p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2018</h4>
               <h3>HTML, CSS &amp; Javascript</h3>
               <h4>Codecademy</h4>
-              <p>Duis enim dolore ut pariatur minim. Ullamco magna eu ad ut dolore aute velit aliqua. Officia amet voluptate labore anim culpa pariatur nisi quis ullamco enim irure officia deserunt occaecat. Veniam irure cupidatat reprehenderit tempor minim. Est irure dolore dolore Lorem incididunt magna aute sunt sit consequat cillum.</p>
+              <p>
+                Including Bootstrap and TailwindCSS. Regarding Javascript: Data
+                types, Functions, Loops, Array/Objects.
+              </p>
             </div>
           </div>
         </div>
@@ -270,18 +345,35 @@ export default function Home() {
           <h1>My Work</h1>
           <h2>Highlighted projects</h2>
           <div className={styles.highlightedProjectsContainer}>
-            <HighlightedProject projectTitle="WeHireYou" projectDescription="A website" projectTechnologies="NextJS, React, Typescript" />
-            <HighlightedProject projectTitle="SpotMyNext" projectDescription="A website" projectTechnologies="NextJS, React" />
-            <HighlightedProject projectTitle="GoWork ApS" projectDescription="A website" projectTechnologies="NextJS, React" />
+            <HighlightedProject
+              projectTitle="SpotMyNext"
+              projectDescription="Catalog app offering user based recommendations for movies/books/video games."
+              projectTechnologies="Next.js, React, MongoDB, CSS Grid"
+              projectPhoto="spotmynext.jpg"
+              projectURL="https://spotmynext.com"
+            />
+            <HighlightedProject
+              projectTitle="GoWork ApS"
+              projectDescription="GoWork is a temp hiring agency in Denmark. Includes hiring portal."
+              projectTechnologies="Next.js, React"
+              projectPhoto="gowork.jpg"
+              projectURL="https://gowork.dk"
+            />
+            <HighlightedProject
+              projectTitle="WeHireYou"
+              projectDescription="A website"
+              projectTechnologies="Next.js, React, Typescript"
+            />
           </div>
           <div className={styles.otherProjectsContainer}>
             <h2>Other projects</h2>
+            <ul style={{ padding: "0px" }}>{fetchedRepos}</ul>
           </div>
         </div>
         <div id="contact">
           <ContactForm />
         </div>
       </main>
-    </div>
+    </>
   );
 }
