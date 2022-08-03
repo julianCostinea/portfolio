@@ -2,15 +2,15 @@
   margin: 0 auto;
   background-color: white;
   border-radius: 2px;
-  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: box-shadow 300ms ease-in-out;
   opacity: 0;
-  max-width: 350px;
+  max-width: 420px;
 }
 
 .highlightedProject:hover {
-  box-shadow: 1px 5px 15px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.25);
 }
 
 .highlightedProjectPhoto {
@@ -49,7 +49,7 @@
     animation-delay: 400ms;
   }
   .highlightedProjectPhoto {
-    width: 380px;
+    width: 420px;
     height: 300px;
   }
 }
