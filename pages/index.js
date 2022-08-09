@@ -340,6 +340,15 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <h1>Currently Studying</h1>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>{Icons.EducationIcon}</div>
+            <div>
+              <h4></h4>
+              <h3>React Native</h3>
+              <h4>Academind</h4>
+            </div>
+          </div>
         </div>
         <div id="projects" className={styles.projects}>
           <h1>My Work</h1>
@@ -347,22 +356,32 @@ export default function Home() {
           <div className={styles.highlightedProjectsContainer}>
             <HighlightedProject
               projectTitle="SpotMyNext"
-              projectDescription="Catalog app offering user based recommendations for movies/books/video games."
-              projectTechnologies="Next.js, React, MongoDB, CSS Grid"
+              projectDescription="Catalog app offering user based recommendations for movies, books and video games."
+              projectTechnologies="Next.js, React, MongoDB, React-Transition-Group, Sendgrid, CSS Grid"
               projectPhoto="spotmynext.jpg"
               projectURL="https://spotmynext.com"
             />
             <HighlightedProject
               projectTitle="GoWork ApS"
               projectDescription="GoWork is a temp hiring agency in Denmark. Includes hiring portal."
-              projectTechnologies="Next.js, React"
+              projectTechnologies="Next.js, React, Yup, Sendgrid"
               projectPhoto="gowork.jpg"
               projectURL="https://gowork.dk"
             />
             <HighlightedProject
+              projectTitle="CompletCurat"
+              projectDescription="CompletCurat is a cleaning company in Romania that services both private and commercial clients."
+              projectTechnologies="Next.js, React, EmailJs, Swiper"
+              projectPhoto = "completcurat.jpg"
+              projectURL="https://completcurat-2eojcuyey-juliancostinea.vercel.app/"
+            />
+          </div>
+          <h2>Current project(s)</h2>
+          <div className={styles.CurrentProjectsContainer}>
+            <HighlightedProject
               projectTitle="WeHireYou"
               projectDescription="A website"
-              projectTechnologies="Next.js, React, Typescript"
+              projectTechnologies="Next.js, React, Typescript, MongoDB, Amazon S3"
             />
           </div>
           <div className={styles.otherProjectsContainer}>
