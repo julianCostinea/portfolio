@@ -178,7 +178,7 @@ export default function Home() {
               <p>
                 Built apps and websites for clients on upwork.com and
                 freelancer.com <br />
-                Tools used consist of React, Next.js, MongoDB, Php, Laravel and
+                Tools used consist of React, NEXT.js, MongoDB, Php, Laravel and
                 mySQL.
               </p>
             </div>
@@ -213,7 +213,7 @@ export default function Home() {
             <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2020</h4>
-              <h3>Next JS</h3>
+              <h3>NEXT.js</h3>
               <h4>Academind</h4>
               <p>
                 File-based Routing, Page Pre-Rendering (Static Generation &amp;
@@ -357,21 +357,21 @@ export default function Home() {
             <HighlightedProject
               projectTitle="SpotMyNext"
               projectDescription="Catalog app offering user based recommendations for movies, books and video games."
-              projectTechnologies="Next.js, React, MongoDB, React-Transition-Group, Sendgrid, CSS Grid"
+              projectTechnologies="NEXT.js, React, MongoDB, React-Transition-Group, Sendgrid, CSS Grid"
               projectPhoto="spotmynext.jpg"
               projectURL="https://spotmynext.com"
             />
             <HighlightedProject
               projectTitle="GoWork ApS"
               projectDescription="GoWork is a temp hiring agency in Denmark. Includes hiring portal."
-              projectTechnologies="Next.js, React, Yup, Sendgrid"
+              projectTechnologies="NEXT.js, React, Yup, Sendgrid"
               projectPhoto="gowork.jpg"
               projectURL="https://gowork.dk"
             />
             <HighlightedProject
               projectTitle="CompletCurat"
               projectDescription="CompletCurat is a cleaning company in Romania that services both private and commercial clients."
-              projectTechnologies="Next.js, React, EmailJs, Swiper"
+              projectTechnologies="NEXT.js, React, EmailJs, Swiper"
               projectPhoto = "completcurat.jpg"
               projectURL="https://completcurat-2eojcuyey-juliancostinea.vercel.app/"
             />
@@ -381,7 +381,7 @@ export default function Home() {
             <HighlightedProject
               projectTitle="WeHireYou"
               projectDescription="A website"
-              projectTechnologies="Next.js, React, Typescript, MongoDB, Amazon S3"
+              projectTechnologies="NEXT.js, React, Typescript, MongoDB, Amazon S3"
             />
           </div>
           <div className={styles.otherProjectsContainer}>
