@@ -19,9 +19,9 @@ const Footer = () => (
       >
         {GitHubIcon}
       </a>
-      <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+      {/* <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
       {LinkedInIcon}
-      </a>
+      </a> */}
     </div>
   </footer>
 );

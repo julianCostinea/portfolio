@@ -6,7 +6,7 @@ const DownloadButton = (props) => {
 
   return (
     <button className={styles.Button}>
-      <a href="/Bekræftelse på vikariat_Lokalevagt_OCC.pdf" download>
+      <a href="/resume.pdf" download>
         Download C.V.
       </a>
     </button>
