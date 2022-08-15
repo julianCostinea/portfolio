@@ -16,15 +16,23 @@
 .homeIntro {
   position: relative;
   width: 100%;
-  background-image: url('/introPhoto.jpg');
+  /* background-image: url('/introPhoto.jpg'); */
   opacity:90% ; 
-  background-size: cover;
+  /* background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-attachment: fixed;
+  background-position: bottom center; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  z-index: 2;
+}
+.homeIntro div{
+  z-index: 2;
+}
+.homeIntro img {
+  z-index: 1;
 }
 
 .aboutMe {

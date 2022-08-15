@@ -8,6 +8,7 @@ import ContactForm from "../components/ContactForm/ContactForm";
 import HighlightedProject from "../components/HighlightedProject/HighlightedProject";
 import FetchedRepo from "../components/FetchedRepo/FetchedRepo";
 import OtherSkill from "../components/UI/OtherSkill/OtherSkill";
+import { IntroPhoto } from "../components/UI/IntroPhoto/IntroPhoto";
 
 export default function Home() {
   const [fetchedRepos, setFetchedRepos] = useState("");
@@ -93,6 +94,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.homeIntro} id="about">
+          <IntroPhoto />
           <div className={styles.rotatingSentence}>
             <h2>
               Hello! I am <span style={{ color: "white" }}>Julian.</span>
