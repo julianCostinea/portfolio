@@ -8,7 +8,7 @@ export const ProfilePhoto = () => {
     <div className={styles.VikarPhoto}>
         <Image
             width="200px" height="200px" quality={100} loading="eager" 
-            src='/Mexico.jpg' alt="Profile photo"
+            src='/profile.jpg' alt="Profile photo"
             />
     </div>
 );}

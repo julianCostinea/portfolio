@@ -24,9 +24,9 @@ const SideDrawer = () => {
         </nav>
         <div className={classes.Footer}>
           <div className={classes.SideDrawerSocial}>
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+            {/* <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
               {LinkedInIcon}
-            </a>
+            </a> */}
             <a
               href="https://github.com/julianCostinea"
               target="_blank"

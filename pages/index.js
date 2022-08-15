@@ -7,6 +7,7 @@ import * as Icons from "../components/UI/Icons/Icons";
 import ContactForm from "../components/ContactForm/ContactForm";
 import HighlightedProject from "../components/HighlightedProject/HighlightedProject";
 import FetchedRepo from "../components/FetchedRepo/FetchedRepo";
+import OtherSkill from "../components/UI/OtherSkill/OtherSkill";
 
 export default function Home() {
   const [fetchedRepos, setFetchedRepos] = useState("");
@@ -57,7 +58,7 @@ export default function Home() {
         }
       });
     },
-    navigationOptions);
+      navigationOptions);
     navigationObserver.observe(homeIntroSection);
 
     const appearOnScroll = new IntersectionObserver(function (
@@ -73,7 +74,7 @@ export default function Home() {
         }
       });
     },
-    appearOptions);
+      appearOptions);
 
     sliders.forEach((slider) => {
       appearOnScroll.observe(slider);
@@ -132,13 +133,13 @@ export default function Home() {
               >
                 {Icons.GitHubIcon}
               </a>
-              <a
+              {/* <a
                 href="https://www.linkedin.com"
                 target="_blank"
                 rel="noreferrer"
               >
                 {Icons.LinkedInIcon}
-              </a>
+              </a> */}
             </div>
             <div className={styles.photoCredit}>
               Photo by{" "}
@@ -262,21 +263,12 @@ export default function Home() {
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>{Icons.EducationIcon}</div>
             <div>
-              <h4>2019</h4>
-              <h3>ES6</h3>
-              <h4>WesBos</h4>
-              <p>Destructuring, Spread/Rest, Promises, ESLint, Async+Await</p>
-            </div>
-          </div>
-          <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>{Icons.EducationIcon}</div>
-            <div>
               <h4>2018</h4>
               <h3>Laravel</h3>
               <h4>Udemy</h4>
               <p>
                 Routing, MVC(Model, View, Controller), Testing, Eloquent,
-                Authentication, Database Migration,Seeding&amp;Factories,
+                Authentication, Database Migration, Seeding&amp;Factories,
                 Caching, File System
               </p>
             </div>
@@ -310,34 +302,9 @@ export default function Home() {
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>{Icons.EducationIcon}</div>
             <div>
-              <h4>2018</h4>
-              <h3>Git &amp; GitHub</h3>
-              <h4>Udemy</h4>
-              <p>Commits, Branching, Merging, Rebasing, Stashing</p>
-            </div>
-          </div>
-          <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>{Icons.EducationIcon}</div>
-            <div>
-              <h4>2018</h4>
-              <h3>Basics of VBA (Visual Basic for Applications)</h3>
-              <h4>Udemy</h4>
-              <p>
-                Data Types, Functions, Loops, Forms, Recording and Adapting
-                Macros
-              </p>
-            </div>
-          </div>
-          <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>{Icons.EducationIcon}</div>
-            <div>
-              <h4>2018</h4>
-              <h3>HTML, CSS &amp; Javascript</h3>
-              <h4>Codecademy</h4>
-              <p>
-                Including Bootstrap and TailwindCSS. Regarding Javascript: Data
-                types, Functions, Loops, Array/Objects.
-              </p>
+              <h4>2014-2018</h4>
+              <h3>Bachelor in International Sales and Marketing</h3>
+              <h4>University College Lillebælt</h4>
             </div>
           </div>
           <h1>Currently Studying</h1>
@@ -347,6 +314,20 @@ export default function Home() {
               <h4></h4>
               <h3>React Native</h3>
               <h4>Academind</h4>
+            </div>
+          </div>
+          <div className={` ${styles.slideUp}`}>
+            <h1>Other skills</h1>
+            <div className={styles.otherSkills}>
+              <OtherSkill title="Javascript" />
+              <OtherSkill title="TypeScript" />
+              <OtherSkill title="TailwindCSS" />
+              <OtherSkill title="Bootstrap" />
+              <OtherSkill title="VBA" />
+              <OtherSkill title="Git &amp; GitHub" />
+              <OtherSkill title="ES6" />
+              <OtherSkill title="Jest" />
+              <OtherSkill title="Rest APIs" />
             </div>
           </div>
         </div>
@@ -372,7 +353,7 @@ export default function Home() {
               projectTitle="CompletCurat"
               projectDescription="CompletCurat is a cleaning company in Romania that services both private and commercial clients."
               projectTechnologies="NEXT.js, React, EmailJs, Swiper"
-              projectPhoto = "completcurat.jpg"
+              projectPhoto="completcurat.jpg"
               projectURL="https://completcurat-2eojcuyey-juliancostinea.vercel.app/"
             />
           </div>
@@ -380,8 +361,9 @@ export default function Home() {
           <div className={styles.CurrentProjectsContainer}>
             <HighlightedProject
               projectTitle="WeHireYou"
-              projectDescription="A website"
+              projectDescription="A hiring portal to be used as a SAAS."
               projectTechnologies="NEXT.js, React, Typescript, MongoDB, Amazon S3"
+              projectPhoto="missing.png"
             />
           </div>
           <div className={styles.otherProjectsContainer}>
