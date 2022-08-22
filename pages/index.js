@@ -59,7 +59,7 @@ export default function Home() {
         }
       });
     },
-      navigationOptions);
+    navigationOptions);
     navigationObserver.observe(homeIntroSection);
 
     const appearOnScroll = new IntersectionObserver(function (
@@ -75,7 +75,7 @@ export default function Home() {
         }
       });
     },
-      appearOptions);
+    appearOptions);
 
     sliders.forEach((slider) => {
       appearOnScroll.observe(slider);
@@ -160,6 +160,19 @@ export default function Home() {
           <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>{Icons.LaptopIcon}</div>
             <div>
+              <h4>2018-2022</h4>
+              <h3>Freelance Developer</h3>
+              <p>
+                Built apps and websites for clients on upwork.com and
+                freelancer.com <br />
+                Tools used consist of React, NEXT.js, MongoDB, Php, Laravel and
+                mySQL.
+              </p>
+            </div>
+          </div>
+          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+            <div>{Icons.LaptopIcon}</div>
+            <div>
               <h4>2016-2022</h4>
               <h3>HR Consultant & IT Manager</h3>
               <h4>GoWork Studenterhjælp ApS</h4>
@@ -170,19 +183,6 @@ export default function Home() {
                 payroll, built in VBA and Excel.
                 <br />
                 Also developed the company website and recruiting portal.
-              </p>
-            </div>
-          </div>
-          <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>{Icons.LaptopIcon}</div>
-            <div>
-              <h4>2018-2022</h4>
-              <h3>Freelance Developer</h3>
-              <p>
-                Built apps and websites for clients on upwork.com and
-                freelancer.com <br />
-                Tools used consist of React, NEXT.js, MongoDB, Php, Laravel and
-                mySQL.
               </p>
             </div>
           </div>
@@ -228,7 +228,7 @@ export default function Home() {
             <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2019</h4>
-              <h3>ReactJS (including Hooks and Redux)</h3>
+              <h3>React (including Hooks and Redux)</h3>
               <h4>Academind</h4>
               <p>
                 Class Components &amp; Functional Components/Hooks, Redux,
@@ -253,7 +253,7 @@ export default function Home() {
             <div>{Icons.EducationIcon}</div>
             <div>
               <h4>2019</h4>
-              <h3>Node &amp; Express JS</h3>
+              <h3>Node &amp; Express.js</h3>
               <h4>Academind</h4>
               <p>
                 Routing, Authentication &amp; Authorization, Session &amp;
