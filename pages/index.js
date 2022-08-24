@@ -84,7 +84,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Julian | Web Developer</title>
+        <title>Emil | Web Developer</title>
         <meta
           name="description"
           content="I develop websites using mostly javascript."
@@ -97,7 +97,7 @@ export default function Home() {
           <IntroPhoto />
           <div className={styles.rotatingSentence}>
             <h2>
-              Hello! I am <span style={{ color: "white" }}>Julian.</span>
+              Hello! I am <span style={{ color: "white" }}>Emil.</span>
             </h2>
             <h2 className={styles.sentence}>
               I develop apps with the help of
@@ -115,7 +115,7 @@ export default function Home() {
           <div className={styles.aboutMe}>
             <ProfilePhoto />
             <p>
-              <span>Julian Emil Costinea</span>
+              <span>Emil Julian Costinea</span>
             </p>
             <p>
               Working from <span>Odense, Denmark</span>

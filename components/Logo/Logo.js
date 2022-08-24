@@ -14,7 +14,7 @@ const Logo = (props) => {
           className={classes.LogoContainer}
         >
           <p>
-            <strong>Julian&nbsp;|&nbsp;E.C.</strong>
+            <strong>Emil&nbsp;|&nbsp;E.J.C.</strong>
           </p>
         </a>
       </Link>
