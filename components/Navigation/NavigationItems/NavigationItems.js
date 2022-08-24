@@ -7,7 +7,7 @@ const NavigationItems = () => {
   return (
     <ul className={`${classes.NavigationItems}`}>
       <NavigationItem link="#about">About</NavigationItem>
-      <NavigationItem link="#cv">C.V.</NavigationItem>
+      <NavigationItem link="#qualifications">Qualifications</NavigationItem>
       <NavigationItem link="#projects">Projects</NavigationItem>
       <NavigationItem link="#contact">Contact</NavigationItem>
     </ul>

@@ -9,6 +9,8 @@ import HighlightedProject from "../components/HighlightedProject/HighlightedProj
 import FetchedRepo from "../components/FetchedRepo/FetchedRepo";
 import OtherSkill from "../components/UI/OtherSkill/OtherSkill";
 import { IntroPhoto } from "../components/UI/IntroPhoto/IntroPhoto";
+import MainSkill from "../components/MainSkill/MainSkill";
+import * as MainSkillIcons from "../components/UI/MainSkillsSVGs/MainSkillsSVGS";
 
 export default function Home() {
   const [fetchedRepos, setFetchedRepos] = useState("");
@@ -89,7 +91,6 @@ export default function Home() {
           name="description"
           content="I develop websites using mostly javascript."
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
@@ -99,18 +100,17 @@ export default function Home() {
             <h2>
               Hello! I am <span style={{ color: "white" }}>Emil.</span>
             </h2>
-            <h2 className={styles.sentence}>
-              I develop apps with the help of
-              <div className={styles.slidingVertical}>
-                <span>React</span>
-                <span>Express</span>
-                <span>NEXT.js</span>
-                <span>MongoDB</span>
-                <span>Php</span>
-                <span>Laravel</span>
-                <span>mySQL</span>
-              </div>
-            </h2>
+            <h2 className={styles.sentence}>I am a</h2>
+            <div className={styles.slidingVertical}>
+              <h2>
+                <span>Web</span>
+                <span>Front-End</span>
+                <span>Back-End</span>
+                <span>Full Stack</span>
+              </h2>
+            </div>
+            <br />
+            <h2>developer.</h2>
           </div>
           <div className={styles.aboutMe}>
             <ProfilePhoto />
@@ -135,6 +135,13 @@ export default function Home() {
               >
                 {Icons.GitHubIcon}
               </a>
+              <a
+                href="https://www.facebook.com/julian.costinea"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {Icons.facebookIcon}
+              </a>
               {/* <a
                 href="https://www.linkedin.com"
                 target="_blank"
@@ -155,22 +162,31 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.cvSectionContainer} id="cv">
-          <h1>Experience</h1>
-          <div className={`${styles.cvSection} ${styles.slideUp}`}>
-            <div>{Icons.LaptopIcon}</div>
-            <div>
-              <h4>2018-2022</h4>
-              <h3>Freelance Developer</h3>
-              <p>
-                Built apps and websites for clients on upwork.com and
-                freelancer.com <br />
-                Tools used consist of React, NEXT.js, MongoDB, Php, Laravel and
-                mySQL.
-              </p>
-            </div>
+        <div className={styles.cvSectionContainer} id="qualifications">
+          <h1>
+            Technical <span>skills</span>
+          </h1>
+          <div className={styles.mainSkillsContainer}>
+            <MainSkill title="CSS3" skillIcon={MainSkillIcons.CSSIcon} />
+            <MainSkill title="HTML5" skillIcon={MainSkillIcons.HTMLIcon} />
+            <MainSkill
+              title="JavaScript"
+              skillIcon={MainSkillIcons.JavascriptIcon}
+            />
+            <MainSkill title="React" skillIcon={MainSkillIcons.ReactIcon} />
+            <MainSkill title="Next.js" skillIcon={MainSkillIcons.NextJSIcon} />
+            <MainSkill
+              title="TypeScript"
+              skillIcon={MainSkillIcons.TypeScriptIcon}
+            />
+            <MainSkill title="NodeJS" skillIcon={MainSkillIcons.nodeIcon} />
+            <MainSkill title="MongoDB" skillIcon={MainSkillIcons.MongoDBIcon} />
+            <MainSkill title="mySQL" skillIcon={MainSkillIcons.mySQLIcon} />
+            <MainSkill title="PHP" skillIcon={MainSkillIcons.phpIcon} />
+            <MainSkill title="Laravel" skillIcon={MainSkillIcons.laravelIcon} />
+            <MainSkill title="Jest" skillIcon={MainSkillIcons.JestIcon} />
           </div>
-          <div className={`${styles.cvSection} ${styles.slideUp}`}>
+          {/* <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>{Icons.LaptopIcon}</div>
             <div>
               <h4>2016-2022</h4>
@@ -317,24 +333,25 @@ export default function Home() {
               <h3>React Native</h3>
               <h4>Academind</h4>
             </div>
-          </div>
-          <div className={` ${styles.slideUp}`}>
-            <h1>Other skills</h1>
+          </div> */}
+          <div>
+            <h1>
+              Other <span>skills</span>
+            </h1>
             <div className={styles.otherSkills}>
-              <OtherSkill title="Javascript" />
-              <OtherSkill title="TypeScript" />
               <OtherSkill title="TailwindCSS" />
               <OtherSkill title="Bootstrap" />
-              <OtherSkill title="VBA" />
               <OtherSkill title="Git &amp; GitHub" />
+              <OtherSkill title="VBA" />
               <OtherSkill title="ES6" />
-              <OtherSkill title="Jest" />
-              <OtherSkill title="Rest APIs" />
+              <OtherSkill title="English" />
+              <OtherSkill title="Danish" />
+              <OtherSkill title="Spanish" />
             </div>
           </div>
         </div>
         <div id="projects" className={styles.projects}>
-          <h1>My Work</h1>
+          <h1>My <span>Work</span></h1>
           <h2>Highlighted projects</h2>
           <div className={styles.highlightedProjectsContainer}>
             <HighlightedProject
@@ -359,7 +376,7 @@ export default function Home() {
               projectURL="https://completcurat.vercel.app/"
             />
           </div>
-          <h2>Current project(s)</h2>
+          {/* <h2>Current project(s)</h2>
           <div className={styles.CurrentProjectsContainer}>
             <HighlightedProject
               projectTitle="WeHireYou"
@@ -367,7 +384,7 @@ export default function Home() {
               projectTechnologies="NEXT.js, React, Typescript, MongoDB, Amazon S3"
               projectPhoto="missing.png"
             />
-          </div>
+          </div> */}
           <div className={styles.otherProjectsContainer}>
             <h2>Other projects</h2>
             <ul style={{ padding: "0px" }}>{fetchedRepos}</ul>
