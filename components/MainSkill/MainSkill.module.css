@@ -2,6 +2,11 @@
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 7px 0px;
   padding: 2rem;
+  transition: transform 0.2s ease-in-out 0s;
+}
+
+.MainSkill:hover{
+  transform: scale(1.05);
 }
 
 .MainSkill p {

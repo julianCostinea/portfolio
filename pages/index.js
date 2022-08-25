@@ -373,7 +373,7 @@ export default function Home() {
               projectDescription="CompletCurat is a cleaning company in Romania that services both private and commercial clients."
               projectTechnologies="NEXT.js, React, EmailJs, Swiper"
               projectPhoto="completcurat.jpg"
-              projectURL="https://completcurat.vercel.app/"
+              projectURL="https://complecurat.com"
             />
           </div>
           {/* <h2>Current project(s)</h2>
