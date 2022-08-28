@@ -136,11 +136,11 @@ export default function Home() {
                 {Icons.GitHubIcon}
               </a>
               <a
-                href="https://www.facebook.com/julian.costinea"
+                href="https://www.linkedin.com/in/emil-julian-costinea-74b291103/"
                 target="_blank"
                 rel="noreferrer"
               >
-                {Icons.facebookIcon}
+                {Icons.LinkedInIcon}
               </a>
               {/* <a
                 href="https://www.linkedin.com"

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import SideDrawerContext from "../../../store/SideDrawerContext";
 import NavigationItems from "../NavigationItems/NavigationItems";
 import DrawerToggle from "../DrawerToggle/DrawerToggle";
-import { MailIcon, facebookIcon, GitHubIcon } from "../../UI/Icons/Icons";
+import { MailIcon, LinkedInIcon, GitHubIcon } from "../../UI/Icons/Icons";
 
 import classes from "./SideDrawer.module.css";
 
@@ -35,11 +35,11 @@ const SideDrawer = () => {
               {GitHubIcon}
             </a>
             <a
-              href="https://www.facebook.com/julian.costinea"
+              href="https://www.linkedin.com/in/emil-julian-costinea-74b291103/"
               target="_blank"
               rel="noreferrer"
             >
-              {facebookIcon}
+              {LinkedInIcon}
             </a>
           </div>
           <div className={classes.SideDrawerSocial}>

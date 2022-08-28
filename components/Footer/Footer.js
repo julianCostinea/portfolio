@@ -1,5 +1,5 @@
 import React from "react";
-import { GitHubIcon, facebookIcon } from "../UI/Icons/Icons";
+import { GitHubIcon, LinkedInIcon } from "../UI/Icons/Icons";
 
 import classes from "./Footer.module.css";
 
@@ -20,11 +20,11 @@ const Footer = () => (
         {GitHubIcon}
       </a>
       <a
-        href="https://www.facebook.com/julian.costinea"
+        href="https://www.linkedin.com/in/emil-julian-costinea-74b291103/"
         target="_blank"
         rel="noreferrer"
       >
-        {facebookIcon}
+        {LinkedInIcon}
       </a>
       {/* <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
       {LinkedInIcon}
