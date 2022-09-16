@@ -179,12 +179,12 @@ export default function Home() {
               title="TypeScript"
               skillIcon={MainSkillIcons.TypeScriptIcon}
             />
-            <MainSkill title="NodeJS" skillIcon={MainSkillIcons.nodeIcon} />
+            {/* <MainSkill title="NodeJS" skillIcon={MainSkillIcons.nodeIcon} /> */}
             <MainSkill title="MongoDB" skillIcon={MainSkillIcons.MongoDBIcon} />
             <MainSkill title="mySQL" skillIcon={MainSkillIcons.mySQLIcon} />
             <MainSkill title="PHP" skillIcon={MainSkillIcons.phpIcon} />
             <MainSkill title="Laravel" skillIcon={MainSkillIcons.laravelIcon} />
-            <MainSkill title="Jest" skillIcon={MainSkillIcons.JestIcon} />
+            {/* <MainSkill title="Jest" skillIcon={MainSkillIcons.JestIcon} /> */}
           </div>
           {/* <div className={`${styles.cvSection} ${styles.slideUp}`}>
             <div>{Icons.LaptopIcon}</div>
