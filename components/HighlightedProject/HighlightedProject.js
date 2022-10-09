@@ -10,7 +10,7 @@ const HighlightedProject = (props) => {
     );
     const appearOptions = {
       threshold: 0,
-      rootMargin: " 0px 0px -100px 0px",
+      rootMargin: "100px 0px 0px 0px",
     };
 
     const appearOnScroll = new IntersectionObserver(function (

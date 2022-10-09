@@ -64,24 +64,24 @@ export default function Home() {
     navigationOptions);
     navigationObserver.observe(homeIntroSection);
 
-    const appearOnScroll = new IntersectionObserver(function (
-      entries,
-      observer
-    ) {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add(styles["appear"]);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    appearOptions);
+    // const appearOnScroll = new IntersectionObserver(function (
+    //   entries,
+    //   observer
+    // ) {
+    //   entries.forEach((entry) => {
+    //     if (!entry.isIntersecting) {
+    //       return;
+    //     } else {
+    //       entry.target.classList.add(styles["appear"]);
+    //       observer.unobserve(entry.target);
+    //     }
+    //   });
+    // },
+    // appearOptions);
 
-    sliders.forEach((slider) => {
-      appearOnScroll.observe(slider);
-    });
+    // sliders.forEach((slider) => {
+    //   appearOnScroll.observe(slider);
+    // });
   }, []);
   return (
     <>
